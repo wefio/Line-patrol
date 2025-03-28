@@ -26,5 +26,6 @@ roslaunch followbot turtlebot3_course.launch #加载地图
 rosrun followbot follower.py
 ```
 # 参考
+<p>https://zhuanlan.zhihu.com/p/8549697809</p>
 <p>https://gitee.com/webcohort/ros</p>
 <p>https://zhuanlan.zhihu.com/p/664776413</p>
