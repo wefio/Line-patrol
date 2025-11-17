@@ -25,6 +25,30 @@ roslaunch followbot turtlebot3_course.launch #加载地图
 # 打开第二个终端
 rosrun followbot follower.py
 ```
+
+## 修改轨迹贴图
+贴图相关内容在"followbot/worlds/"<br>
+存放了两张图片，course.png和course1.png，默认使用course1.png，图片长宽比为1:1，分辨率不限(其他比例可以自行尝试)。<br>
+如果要改，可以直接同名替换或者修改"followbot/worlds/course.material"。<br>
+使用photoshop进行图片处理，psd文件已给出。只要轨迹是黄色的，自己处理或者自己画一个也可以。比如course.png就带有明显的手绘痕迹，course1.png的黑色和白色轨迹也是手绘而成(黑色和白色仅为装饰，不参与循迹程序)。<br>
+```followbot/worlds/course.material
+material course
+{
+  receive_shadows on
+  technique
+  {
+    pass
+    {
+      ambient 0.5 0.5 0.5 1.0
+      texture_unit
+      {
+        texture course1.png  #改这里
+      }
+    }
+  }
+}
+```
+
 # 参考
 <p>https://zhuanlan.zhihu.com/p/8549697809</p>
 <p>https://gitee.com/webcohort/ros</p>
